@@ -5,7 +5,8 @@
 Kinetile is a Breakout/Arkanoid-style game that runs locally in a web
 browser with keyboard controls. The project is built as fourteen
 complete snapshots: each `iteration-N/` folder is a playable game at
-that point in the design.
+that point in the design. All fourteen are present and independently
+playable.
 
 Iterations 1–5 are monochrome. Colour, sound, scoring, power-ups, and
 tougher bricks arrive in later snapshots.
