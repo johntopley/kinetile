@@ -25,7 +25,10 @@ scaled to the viewport.
 Iterations 1–5 are monochrome (white on black). Colour and synthesised
 sound arrive in iteration 6. Scoring and a persisted high-score table
 arrive in iteration 7. Iterations 8–12 add Arkanoid-style power-ups.
-Iterations 13–14 add tougher brick types.
+Iterations 13–14 add tougher brick types. Iteration 15 ornaments the
+playfield. Iterations 16–27 add Catch, extra lives, a Break gate,
+Barrier, Reduce, Fast, Reverse, Fireball, Twin bat, Magnet, Mystery,
+and a ball-only Slow.
 
 The title screen shows the Kinetile logo in every iteration. Iterations
 1–5 draw that logo in grayscale so the monochrome constraint still
