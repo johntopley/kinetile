@@ -1,0 +1,15 @@
+{
+  "name": "kinetile",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Kinetile — an iterative Breakout/Arkanoid-style browser game",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "start": "npx --yes serve ."
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}

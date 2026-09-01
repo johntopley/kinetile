@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kinetile</title>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #05070c;
+        color: #e8f4ff;
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        line-height: 1.5;
+      }
+
+      main {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 32px 24px 64px;
+      }
+
+      .logo {
+        display: block;
+        width: min(100%, 720px);
+        height: auto;
+        margin: 0 auto 28px;
+      }
+
+      h1 {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+      }
+
+      p {
+        max-width: 62ch;
+        margin: 0 0 16px;
+        color: #b8c9d9;
+      }
+
+      ol {
+        padding-left: 1.2em;
+      }
+
+      li {
+        margin: 0.35em 0;
+      }
+
+      a {
+        color: #5ad6ff;
+      }
+
+      a:hover {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img
+        class="logo"
+        src="assets/kinetile-logo.jpg"
+        alt="Kinetile: a glowing ball smashing a crystalline tile"
+      />
+      <h1>Kinetile</h1>
+      <p>
+        A Breakout/Arkanoid-style game built as fourteen complete
+        snapshots. Each iteration is a self-contained, playable game.
+        Iterations 1–5 are monochrome; colour and extras arrive later.
+      </p>
+      <p>Open an iteration:</p>
+      <ol>
+        <li><a href="iteration-1/">Title screen and a movable bat</a></li>
+        <li><a href="iteration-2/">Ball that bounces off walls and the bat</a></li>
+        <li><a href="iteration-3/">Lives and game over</a></li>
+        <li><a href="iteration-4/">Fixed 8×14 brick wall</a></li>
+        <li><a href="iteration-5/">Random formations and levels</a></li>
+        <li><a href="iteration-6/">Full colour and sound</a></li>
+        <li><a href="iteration-7/">Scoring and high-score table</a></li>
+        <li><a href="iteration-8/">Wider-bat power-up</a></li>
+        <li><a href="iteration-9/">Laser bat power-up</a></li>
+        <li><a href="iteration-10/">Piercing-ball power-up</a></li>
+        <li><a href="iteration-11/">Multi-ball power-up</a></li>
+        <li><a href="iteration-12/">Half-speed power-up</a></li>
+        <li><a href="iteration-13/">Multi-hit bricks</a></li>
+        <li><a href="iteration-14/">Shifting bricks</a></li>
+      </ol>
+    </main>
+  </body>
+</html>
