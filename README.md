@@ -3,9 +3,9 @@
 ![Kinetile logo](assets/kinetile-logo.jpg)
 
 Kinetile is a Breakout/Arkanoid-style game that runs locally in a web
-browser with keyboard controls. The project is built as twenty-seven
+browser with keyboard controls. The project is built as twenty-eight
 complete snapshots: each `iteration-N/` folder is a playable game at
-that point in the design. All twenty-seven are present and independently
+that point in the design. All twenty-eight are present and independently
 playable.
 
 Iterations 1–5 are monochrome. Colour, sound, scoring, power-ups, and
@@ -70,6 +70,7 @@ logic is DOM-free so the suite does not need a browser.
 | [iteration-25](iteration-25/) | Magnet bat |
 | [iteration-26](iteration-26/) | Mystery capsule |
 | [iteration-27](iteration-27/) | Ball-only Slow |
+| [iteration-28](iteration-28/) | Finished standalone game |
 
 See [AGENTS.md](AGENTS.md) for design notes, coding conventions, and
 commit message guidance.
