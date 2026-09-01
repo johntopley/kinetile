@@ -49,7 +49,7 @@ function drawTitle(ctx, logo) {
   ctx.fillText("ITERATION 23 — FIREBALL", WIDTH / 2, 400);
   ctx.font = "18px 'Segoe UI', sans-serif";
   ctx.fillStyle = COLOURS.muted;
-  ctx.fillText("A mint capsule lays a one-shot floor across the pit.", WIDTH / 2, 432);
+  ctx.fillText("An orange capsule sets the ball alight.", WIDTH / 2, 432);
   ctx.fillText("Press Space or Enter to begin", WIDTH / 2, 458);
 }
 

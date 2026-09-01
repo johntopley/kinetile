@@ -49,7 +49,7 @@ function drawTitle(ctx, logo) {
   ctx.fillText("ITERATION 26 — MYSTERY", WIDTH / 2, 400);
   ctx.font = "18px 'Segoe UI', sans-serif";
   ctx.fillStyle = COLOURS.muted;
-  ctx.fillText("A mint capsule lays a one-shot floor across the pit.", WIDTH / 2, 432);
+  ctx.fillText("A grey capsule is a lucky dip.", WIDTH / 2, 432);
   ctx.fillText("Press Space or Enter to begin", WIDTH / 2, 458);
 }
 
