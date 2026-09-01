@@ -30,7 +30,7 @@ export const BRICK_WIDTH = 64;
 export const BRICK_HEIGHT = 24;
 export const BRICK_GAP = 2;
 export const BRICK_OFFSET_X = PLAYFIELD_LEFT + 16;
-export const BRICK_OFFSET_Y = PLAYFIELD_TOP + 16;
+export const BRICK_OFFSET_Y = PLAYFIELD_TOP + 16 + BRICK_HEIGHT;
 
 export const INITIAL_LIVES = 3;
 export const MAX_LIVES = 6;

@@ -15,6 +15,7 @@ the ball only.
   breathing glow
 - A distinct collect jingle for every capsule type
 - A faint geometric court texture that changes with the level
+- Fewer armoured bricks, and a one-row gap above the wall
 
 ## How it works
 
@@ -37,6 +38,11 @@ the effect then resolves to another type.
 The court fill is still a near-black wash. `courtPattern` picks one
 of eight line or dot lattices from the level number; the renderer
 clips them to the playfield at very low contrast.
+
+The brick wall sits one row lower than the top rail so a well-aimed
+ball can run along the ceiling. Armoured tiles are sparse: only a
+thin diagonal of cells is even eligible, and most of those stay at
+one hit.
 
 ## Tests
 

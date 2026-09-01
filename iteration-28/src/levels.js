@@ -22,10 +22,10 @@ function shouldPlace(pattern, row, col, rng) {
 }
 
 export function hitsForCell(col, row, rng) {
-  if ((col + row) % 5 !== 2) {
+  if ((col + row) % 8 !== 3 || rng() < 0.72) {
     return 1;
   }
-  return rng() > 0.45 ? 3 : 2;
+  return rng() > 0.9 ? 3 : 2;
 }
 
 export function createLevelWall(rng) {
