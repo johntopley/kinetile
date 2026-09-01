@@ -25,6 +25,17 @@ describe("physics", () => {
     expect(ball.vx).toBeLessThan(0);
   });
 
+  it("lifts a flat wall bounce off the horizontal", () => {
+    const ball = createBall();
+    ball.x = 10;
+    ball.y = 200;
+    ball.vx = -BALL_SPEED;
+    ball.vy = 0;
+    collideBallWithWalls(ball, { left: 16, right: 944, top: 96, bottom: 720 });
+    expect(ball.vx).toBeGreaterThan(0);
+    expect(Math.abs(ball.vy)).toBeGreaterThanOrEqual(BALL_SPEED * MIN_VERTICAL_RATIO - 1e-6);
+  });
+
   it("reflects the ball off the top wall", () => {
     const ball = createBall();
     ball.x = 200;

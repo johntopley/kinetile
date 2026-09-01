@@ -1,7 +1,7 @@
 import { MIN_VERTICAL_RATIO, MAGNET_MIN_Y, MAGNET_PULL, MAGNET_RANGE, PADDLE_MAX_ANGLE } from "./constants.js";
 import { brickBounds } from "./bricks.js";
 import { paddleBounds } from "./paddle.js";
-import { setBallVelocity } from "./ball.js";
+import { ensureMinimumVertical, setBallVelocity } from "./ball.js";
 
 export function circleIntersectsAabb(cx, cy, radius, box) {
   const nearestX = Math.max(box.left, Math.min(cx, box.right));
@@ -28,6 +28,10 @@ export function collideBallWithWalls(ball, playfield) {
     ball.y = playfield.top + ball.radius;
     ball.vy = Math.abs(ball.vy);
     hit = true;
+  }
+
+  if (hit) {
+    ensureMinimumVertical(ball);
   }
 
   return hit;
@@ -103,6 +107,7 @@ export function resolveCircleAabb(ball, box) {
     ball.y = box.bottom + ball.radius;
     ball.vy = Math.abs(ball.vy);
   }
+  ensureMinimumVertical(ball);
 }
 
 export function hitBrick(brick) {

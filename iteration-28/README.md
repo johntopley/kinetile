@@ -24,6 +24,10 @@ a breathing glow. Captions fade in after the mark has settled.
 Bat travel, falling capsules, and the rest of the table stay at full
 pace. Fast still stacks with it.
 
+Magnet pull, wall hits, and brick hits share the bat’s minimum
+vertical component so a shallow rally cannot lock into a horizontal
+ping-pong.
+
 ## Tests
 
 New specs cover the title poses. The Slow specs now assert a halved

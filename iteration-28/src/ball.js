@@ -1,4 +1,4 @@
-import { BALL_RADIUS, BALL_SPEED } from "./constants.js";
+import { BALL_RADIUS, BALL_SPEED, MIN_VERTICAL_RATIO } from "./constants.js";
 
 export function createBall(speed = BALL_SPEED) {
   return {
@@ -52,9 +52,25 @@ export function integrateBall(ball, dt) {
   ball.y += ball.vy * dt;
 }
 
+export function ensureMinimumVertical(ball) {
+  const speed = ball.speed || 1;
+  if (ball.stuck || (ball.vx === 0 && ball.vy === 0)) {
+    return;
+  }
+  const minVy = MIN_VERTICAL_RATIO * speed;
+  if (Math.abs(ball.vy) >= minVy) {
+    return;
+  }
+  const vy = (ball.vy === 0 ? -1 : Math.sign(ball.vy)) * minVy;
+  const vx = Math.sign(ball.vx || 1) * Math.sqrt(Math.max(0, speed * speed - vy * vy));
+  ball.vx = vx;
+  ball.vy = vy;
+}
+
 export function setBallVelocity(ball, vx, vy) {
   const speed = ball.speed;
   const length = Math.hypot(vx, vy) || 1;
   ball.vx = (vx / length) * speed;
   ball.vy = (vy / length) * speed;
+  ensureMinimumVertical(ball);
 }
