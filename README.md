@@ -3,30 +3,34 @@
 ![Kinetile logo](assets/kinetile-logo.jpg)
 
 Kinetile is a Breakout/Arkanoid-style game that runs locally in a web
-browser with keyboard controls. The project is built as twenty-eight
-complete snapshots: each `iteration-N/` folder is a playable game at
-that point in the design. All twenty-eight are present and independently
-playable.
+browser with keyboard controls.
+
+**The finished game is [iteration 28](iteration-28/).** Open that
+folder to play the standalone product: no iteration chrome, the full
+set of capsules, and an animated title. The earlier `iteration-N/`
+folders are complete historical snapshots of the design. All
+twenty-eight are independently playable.
 
 Iterations 1–5 are monochrome. Colour, sound, scoring, power-ups, and
 tougher bricks arrive in later snapshots.
 
 ## Play
 
-Serve the repository root and open the landing page, or open any
-iteration folder directly:
+Serve the repository root, then open the finished game (or the
+landing page if you want the catalogue):
 
 ```bash
 npm start
 ```
 
-Then visit [http://localhost:3000](http://localhost:3000).
+- Finished game: [http://localhost:3000/iteration-28/](http://localhost:3000/iteration-28/)
+- All snapshots: [http://localhost:3000](http://localhost:3000)
 
 Keyboard:
 
 - **Left / A** — move the bat left
 - **Right / D** — move the bat right
-- **Space / Enter** — start, serve, fire lasers (from iteration 9),
+- **Space / Enter** — start, serve, fire lasers, throw a caught ball,
   confirm a high-score name
 - **Escape** — return to the title screen from game over
 
@@ -70,7 +74,7 @@ logic is DOM-free so the suite does not need a browser.
 | [iteration-25](iteration-25/) | Magnet bat |
 | [iteration-26](iteration-26/) | Mystery capsule |
 | [iteration-27](iteration-27/) | Ball-only Slow |
-| [iteration-28](iteration-28/) | Finished standalone game |
+| [iteration-28](iteration-28/) | **Finished game — play this** |
 
 See [AGENTS.md](AGENTS.md) for design notes, coding conventions, and
 commit message guidance.

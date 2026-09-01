@@ -12,7 +12,7 @@ import {
   STATES,
   WIDTH
 } from "./constants.js";
-import { createSilentAudio } from "./audio.js";
+import { createSilentAudio, powerCueName } from "./audio.js";
 import {
   createBall,
   integrateBall,
@@ -402,7 +402,7 @@ function updateFallingPowerUps(game, dt) {
   game.powerUps = remaining;
   for (const item of collected) {
     applyPowerUp(game, item.type);
-    cue(game, "power");
+    cue(game, powerCueName(item.type));
   }
 }
 

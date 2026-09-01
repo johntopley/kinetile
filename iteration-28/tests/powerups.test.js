@@ -78,6 +78,6 @@ describe("power-ups", () => {
     step(game, 0);
     expect(game.powerUps).toHaveLength(0);
     expect(game.paddle.width).toBe(WIDE_PADDLE_WIDTH);
-    expect(game.audio.events).toContain("power");
+    expect(game.audio.events).toContain("powerWIDE");
   });
 });

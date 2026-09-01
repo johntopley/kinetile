@@ -18,6 +18,7 @@ import {
   darken,
   lighten
 } from "./palette.js";
+import { courtPattern } from "./court.js";
 import { titleCaptionOpacity, titleLogoPose } from "./title.js";
 
 function drawLogo(ctx, logo, pose) {
@@ -364,20 +365,113 @@ function drawMissiles(ctx, missiles) {
   }
 }
 
-function drawCourt(ctx) {
+function drawCourt(ctx, level = 1) {
   ctx.fillStyle = COLOURS.background;
   ctx.fillRect(0, 0, WIDTH, HEIGHT);
+  const left = WALL_THICKNESS;
+  const top = HUD_HEIGHT + WALL_THICKNESS;
+  const width = WIDTH - WALL_THICKNESS * 2;
+  const height = HEIGHT - HUD_HEIGHT - WALL_THICKNESS;
   ctx.fillStyle = COLOURS.court;
-  ctx.fillRect(
-    WALL_THICKNESS,
-    HUD_HEIGHT + WALL_THICKNESS,
-    WIDTH - WALL_THICKNESS * 2,
-    HEIGHT - HUD_HEIGHT - WALL_THICKNESS
-  );
+  ctx.fillRect(left, top, width, height);
+  drawCourtTexture(ctx, courtPattern(level), left, top, width, height);
+}
+
+function drawCourtTexture(ctx, pattern, left, top, width, height) {
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(left, top, width, height);
+  ctx.clip();
+  ctx.strokeStyle = "rgba(122, 162, 184, 0.07)";
+  ctx.fillStyle = "rgba(122, 162, 184, 0.06)";
+  ctx.lineWidth = 1;
+
+  if (pattern === 0) {
+    const step = 56;
+    ctx.beginPath();
+    for (let x = left - height; x < left + width + height; x += step) {
+      ctx.moveTo(x, top);
+      ctx.lineTo(x + height, top + height);
+      ctx.moveTo(x, top + height);
+      ctx.lineTo(x + height, top);
+    }
+    ctx.stroke();
+  } else if (pattern === 1) {
+    const gap = 36;
+    for (let row = 0; row < height / gap + 1; row += 1) {
+      const offset = row % 2 === 0 ? 0 : gap / 2;
+      for (let col = 0; col < width / gap + 1; col += 1) {
+        ctx.beginPath();
+        ctx.arc(left + offset + col * gap, top + 18 + row * gap, 1.4, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+  } else if (pattern === 2) {
+    ctx.beginPath();
+    for (let i = 1; i < 14; i += 1) {
+      ctx.arc(left + width / 2, top + 40, i * 42, 0, Math.PI * 2);
+    }
+    ctx.stroke();
+  } else if (pattern === 3) {
+    const step = 44;
+    ctx.beginPath();
+    for (let y = top + 20; y < top + height; y += step) {
+      ctx.moveTo(left, y);
+      ctx.lineTo(left + width, y);
+    }
+    for (let x = left + 28; x < left + width; x += step * 2) {
+      ctx.moveTo(x, top);
+      ctx.lineTo(x, top + height);
+    }
+    ctx.stroke();
+  } else if (pattern === 4) {
+    const gap = 48;
+    for (let y = top + 24; y < top + height; y += gap) {
+      for (let x = left + 24; x < left + width; x += gap) {
+        ctx.beginPath();
+        ctx.moveTo(x - 5, y);
+        ctx.lineTo(x + 5, y);
+        ctx.moveTo(x, y - 5);
+        ctx.lineTo(x, y + 5);
+        ctx.stroke();
+      }
+    }
+  } else if (pattern === 5) {
+    const step = 40;
+    ctx.beginPath();
+    for (let y = top + 16; y < top + height; y += step) {
+      for (let x = left; x < left + width; x += 48) {
+        ctx.moveTo(x, y + 10);
+        ctx.lineTo(x + 16, y);
+        ctx.lineTo(x + 32, y + 10);
+      }
+    }
+    ctx.stroke();
+  } else if (pattern === 6) {
+    const gap = 52;
+    ctx.beginPath();
+    for (let y = top; y < top + height + gap; y += gap) {
+      ctx.moveTo(left, y);
+      ctx.lineTo(left + width, y + width * 0.22);
+      ctx.moveTo(left, y);
+      ctx.lineTo(left + width, y - width * 0.22);
+    }
+    ctx.stroke();
+  } else {
+    ctx.beginPath();
+    const cx = left + width / 2;
+    const cy = top + 8;
+    for (let i = -8; i <= 8; i += 1) {
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(cx + i * 52, top + height);
+    }
+    ctx.stroke();
+  }
+  ctx.restore();
 }
 
 function drawPlayfield(ctx, game) {
-  drawCourt(ctx);
+  drawCourt(ctx, game.level);
   drawHud(ctx, game);
   drawWalls(ctx, game);
   if (game.barrier > 0) {
