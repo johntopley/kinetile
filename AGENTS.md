@@ -28,8 +28,9 @@ arrive in iteration 7. Iterations 8–12 add Arkanoid-style power-ups.
 Iterations 13–14 add tougher brick types. Iteration 15 ornaments the
 playfield. Iterations 16–27 add Catch, extra lives, a Break gate,
 Barrier, Reduce, Fast, Reverse, Fireball, Twin bat, Magnet, Mystery,
-and a ball-only Slow. Iteration 28 presents the finished game: no
-iteration chrome, ball-only Slow, and an animated title logo.
+and a ball-only Slow. Iteration 28 strips the iteration chrome and
+animates the title logo. Iteration 29 is the finished game: pause, a
+local save, and continue from the title screen.
 
 The title screen shows the Kinetile logo in every iteration. Iterations
 1–5 draw that logo in grayscale so the monochrome constraint still
@@ -75,6 +76,7 @@ Typical layout inside an iteration:
 - `src/main.js` — canvas, input wiring, rAF loop
 - `src/audio.js` — Web Audio synthesis (from iteration 6)
 - `src/scores.js` — high-score table (from iteration 7)
+- `src/save.js` — pause snapshot and local save (from iteration 29)
 
 `game.js` owns the state machine. Tests drive `createGame()` and
 `step(dt)` (or a helper that advances many ticks). Do not put drawing

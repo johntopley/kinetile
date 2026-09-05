@@ -5,11 +5,11 @@
 Kinetile is a Breakout/Arkanoid-style game that runs locally in a web
 browser with keyboard controls.
 
-**The finished game is [iteration 28](iteration-28/).** Open that
+**The finished game is [iteration 29](iteration-29/).** Open that
 folder to play the standalone product: no iteration chrome, the full
-set of capsules, and an animated title. The earlier `iteration-N/`
+set of capsules, pause, and a local save. The earlier `iteration-N/`
 folders are complete historical snapshots of the design. All
-twenty-eight are independently playable.
+twenty-nine are independently playable.
 
 Iterations 1–5 are monochrome. Colour, sound, scoring, power-ups, and
 tougher bricks arrive in later snapshots.
@@ -23,7 +23,7 @@ landing page if you want the catalogue):
 npm start
 ```
 
-- Finished game: [http://localhost:3000/iteration-28/](http://localhost:3000/iteration-28/)
+- Finished game: [http://localhost:3000/iteration-29/](http://localhost:3000/iteration-29/)
 - All snapshots: [http://localhost:3000](http://localhost:3000)
 
 Keyboard:
@@ -31,8 +31,11 @@ Keyboard:
 - **Left / A** — move the bat left
 - **Right / D** — move the bat right
 - **Space / Enter** — start, serve, fire lasers, throw a caught ball,
-  confirm a high-score name
-- **Escape** — return to the title screen from game over
+  confirm a high-score name, resume from pause
+- **P** — pause and resume
+- **S** — save the match while paused
+- **C** — continue a saved game from the title screen
+- **Escape** — pause, return to the title from pause or game over
 
 ## Tests
 
@@ -74,7 +77,8 @@ logic is DOM-free so the suite does not need a browser.
 | [iteration-25](iteration-25/) | Magnet bat |
 | [iteration-26](iteration-26/) | Mystery capsule |
 | [iteration-27](iteration-27/) | Ball-only Slow |
-| [iteration-28](iteration-28/) | **Finished game — play this** |
+| [iteration-28](iteration-28/) | Standalone game |
+| [iteration-29](iteration-29/) | **Finished game — play this** |
 
 See [AGENTS.md](AGENTS.md) for design notes, coding conventions, and
 commit message guidance.
