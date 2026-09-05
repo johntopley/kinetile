@@ -15,15 +15,15 @@ level.
 
 ## How it works
 
-`game.gateOpen` is a flag, not a timer. The right wall is drawn in two
-segments with a lit lip on the gap. While the gate is open the paddle
-playfield extends almost to the canvas edge. Crossing that edge calls
-`clearLevel`.
+`game.gateOpen` is a flag, not a timer. The right wall stops above the
+bat, leaving a lit lip on an opening at the floor. While the gate is
+open the paddle playfield extends almost to the canvas edge. Crossing
+that edge calls `clearLevel`.
 
 The gate closes on a new match or a new level so it cannot leak into
 the next formation.
 
 ## Tests
 
-New specs cover opening the gate, clearing the level on exit, and
-closing the gate on the following level.
+New specs cover opening the gate over the bat, clearing the level on
+exit, and closing the gate on the following level.

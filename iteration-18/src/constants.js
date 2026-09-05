@@ -53,8 +53,8 @@ export const LASER_HEIGHT = 16;
 
 export const MAX_BALLS = 5;
 export const SLOW_TIME_SCALE = 0.5;
-export const GATE_TOP = HEIGHT - 180;
 export const GATE_HEIGHT = 88;
+export const GATE_TOP = HEIGHT - GATE_HEIGHT;
 
 export const POWERUP_TYPES = Object.freeze({
   WIDE: "WIDE",

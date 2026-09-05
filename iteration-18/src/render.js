@@ -82,18 +82,22 @@ function drawWalls(ctx, game) {
       COLOURS.wall,
       0
     );
-    fillBevelledRect(
-      ctx,
-      WIDTH - WALL_THICKNESS,
-      gateBottom,
-      WALL_THICKNESS,
-      HEIGHT - gateBottom,
-      COLOURS.wall,
-      0
-    );
+    if (HEIGHT - gateBottom > 0) {
+      fillBevelledRect(
+        ctx,
+        WIDTH - WALL_THICKNESS,
+        gateBottom,
+        WALL_THICKNESS,
+        HEIGHT - gateBottom,
+        COLOURS.wall,
+        0
+      );
+    }
     ctx.fillStyle = lighten(COLOURS.paddle, 0.2);
     ctx.fillRect(WIDTH - WALL_THICKNESS, GATE_TOP, WALL_THICKNESS, 3);
-    ctx.fillRect(WIDTH - WALL_THICKNESS, gateBottom - 3, WALL_THICKNESS, 3);
+    if (HEIGHT - gateBottom > 0) {
+      ctx.fillRect(WIDTH - WALL_THICKNESS, gateBottom - 3, WALL_THICKNESS, 3);
+    }
   } else {
     fillBevelledRect(
       ctx,
